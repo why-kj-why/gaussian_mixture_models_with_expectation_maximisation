@@ -27,13 +27,23 @@ where:
 We use an iterative algorithm called **Expectation Maximisation** to adjust the GMM curves to fit the observed data. This works by alternating between two steps:
 
 1. E-step: estimate the probability that each observation belongs to each Gaussian component
-$$r_{ik}=P(z_i=k|x_i,\:current\:parameters)$$
-$$r_{ik}=\frac{\pi_kN(x_i|\mu_k,\sigma^2_k)}{\sum_{j=1}^{K}\pi_jN(x_i|\mu_j,\sigma^2_j)}$$
+```math
+r_{ik}=P(z_i=k|x_i,\:current\:parameters)
+```
+```math
+r_{ik}=\frac{\pi_kN(x_i|\mu_k,\sigma^2_k)}{\sum_{j=1}^{K}\pi_jN(x_i|\mu_j,\sigma^2_j)}
+```
 
 2. M-step: update the Gaussian parameters using those probabilities
-$$\pi_k=\frac{1}{n}\sum_{i=1}^{n}r_{ik}$$
-$$\mu_k=\frac{\sum_{i=1}^{n}r_{ik}x_i}{\sum_{i=1}^{n}r_{ik}}$$
-$$\sigma^2_k=\frac{\sum_{i=1}^{n}r_{ik}(x_i-\mu_k)^2}{\sum_{i=1}^{n}r_{ik}}$$
+```math
+\pi_k=\frac{1}{n}\sum_{i=1}^{n}r_{ik}
+```
+```math
+\mu_k=\frac{\sum_{i=1}^{n}r_{ik}x_i}{\sum_{i=1}^{n}r_{ik}}
+```
+```math
+\sigma^2_k=\frac{\sum_{i=1}^{n}r_{ik}(x_i-\mu_k)^2}{\sum_{i=1}^{n}r_{ik}}
+```
 
 
 ## Visualisation
