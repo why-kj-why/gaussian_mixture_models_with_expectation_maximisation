@@ -8,7 +8,9 @@
 Sometimes, the observed data of a probability distribution may have multiple peaks. A single Gaussian distribution may not be able to describe the data properly, so we design a Gaussian Mixture Model instead.
 
 A **Gaussian Mixture Model** can be mathematically represented as a combination of multiple Gaussian distributions.
-$$p(x) = \sum_{k=1}^{K}\pi_k\cdot p(x|z=k,\theta_k)$$
+```math
+p(x) = \sum_{k=1}^{K}\pi_k\cdot p(x|z=k,\theta_k)
+```
 
 where:
 
